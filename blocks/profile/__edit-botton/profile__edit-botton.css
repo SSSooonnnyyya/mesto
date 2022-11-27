@@ -1,7 +1,7 @@
 .profile__edit-botton {
     grid-column: 2;
     grid-row: 1;
-    background-image: url(../../../../images/edition.svg);
+    background-image: url(../../../images/edition.svg);
     min-height: 23px;
     min-width: 23px;
     background-repeat: no-repeat;
