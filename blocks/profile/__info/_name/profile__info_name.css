@@ -1,0 +1,25 @@
+.profile__info_name {
+    grid-column: 1;
+    grid-row: 1;
+    color:#FFFFFF;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.14;
+    font-style: normal;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__info_name {
+        font-size: 35px;
+        line-height: 1.14;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profile__info_name {
+        text-align: center;
+        font-size: 27px;
+        line-height: 1.05;
+    }
+}
