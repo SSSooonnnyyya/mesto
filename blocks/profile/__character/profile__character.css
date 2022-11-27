@@ -1,4 +1,4 @@
-.profile__info_character {
+.profile__character {
     grid-column: 1/2;
     grid-row: 2;
     color:#FFFFFF;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 767px) {
-    .profile__info_character {
+    .profile__character {
         text-align: center;
         padding-top: 14px;
         font-size: 14px;

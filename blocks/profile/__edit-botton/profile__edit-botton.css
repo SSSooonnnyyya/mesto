@@ -1,4 +1,4 @@
-.profile__info_edit-botton {
+.profile__edit-botton {
     grid-column: 2;
     grid-row: 1;
     background-image: url(../../../../images/edition.svg);
@@ -10,13 +10,13 @@
     border: 1px solid #FFFFFF;
 }
 
-.profile__info_edit-botton:hover {
+.profile__edit-botton:hover {
     transition: opacity .3s ease;
     opacity: .6;
 }
 
 @media screen and (max-width: 767px) {
-    .profile__info_edit-botton {
+    .profile__edit-botton {
         min-height: 16px;
         min-width: 16px;
         background-size: 50%;

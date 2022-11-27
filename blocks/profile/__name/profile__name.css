@@ -1,4 +1,4 @@
-.profile__info_name {
+.profile__name {
     grid-column: 1;
     grid-row: 1;
     color:#FFFFFF;
@@ -10,14 +10,14 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .profile__info_name {
+    .profile__name {
         font-size: 35px;
         line-height: 1.14;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .profile__info_name {
+    .profile__name {
         text-align: center;
         font-size: 27px;
         line-height: 1.05;
