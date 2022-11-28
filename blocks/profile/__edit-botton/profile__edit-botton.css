@@ -1,4 +1,5 @@
 .profile__edit-botton {
+    all: unset;
     grid-column: 2;
     grid-row: 1;
     background-image: url(../../../images/edition.svg);
@@ -13,6 +14,7 @@
 .profile__edit-botton:hover {
     transition: opacity .3s ease;
     opacity: .6;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {

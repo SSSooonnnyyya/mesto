@@ -7,6 +7,10 @@
     line-height: 1.22;
     font-style: normal;
     margin: 0;
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
@@ -15,5 +19,6 @@
         padding-top: 14px;
         font-size: 14px;
         line-height: 1.214;
+        max-width: 250px;
     }
 }
