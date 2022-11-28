@@ -1,5 +1,7 @@
 .element__like-botton {
-    all: unset;
+    background: none;
+    border: none;
+    padding: 0;
     min-width: 22px;
     min-height: 19px;
     background-image: url(../../../images/like.svg);

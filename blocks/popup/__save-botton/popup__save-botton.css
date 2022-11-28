@@ -1,5 +1,7 @@
 .popup__save-botton {
-    all: unset;
+    background: none;
+    border: none;
+    padding: 0;
     display: flex;
     min-height: 50px;
     min-width: 358px;

@@ -1,5 +1,7 @@
 .popup__close-botton {
-    all: unset;
+    background: none;
+    border: none;
+    padding: 0;
     background-image: url(../../../images/Close\ Icon.svg);
     min-width: 32px;
     min-height: 32px;
