@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 2px solid #FFFFFF;
+    background-size: initial;
 }
 
 .profile__add-botton:hover {
@@ -18,5 +19,6 @@
 @media screen and (max-width: 767px) {
     .profile__add-botton {
         width: 100%;
+        background-image: url(../../../images/add-little.svg);
     }
 }
