@@ -4,21 +4,14 @@
     align-items: start;
     max-width: 880px;
     padding-bottom: 60px;
-    margin: 0 200px;
     padding-top: 66px;
-}
-
-@media screen and (max-width: 1024px) {
-    .footer {
-        margin: 0 70px;
-    }
 }
 
 @media screen and (max-width: 767px) {
     .footer {
-        margin: 0 19px;
         padding-top: 48px;
         min-height: 14px;
         padding-bottom: 36px;
+        padding-left: 19px;
     }
 }
