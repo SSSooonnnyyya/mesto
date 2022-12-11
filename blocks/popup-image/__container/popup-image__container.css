@@ -1,0 +1,10 @@
+.popup-image__container {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-height: 75vh;
+    max-width: 75vw;
+    position: fixed;
+    margin: 0;
+}
