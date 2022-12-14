@@ -2,7 +2,7 @@ const profileButton = document.querySelector('.profile__edit-botton');
 const buttonAdd = document.querySelector('.profile__add-botton');
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupCards = document.querySelector('.popup_type_cards');
-const popupImage = document.querySelector('.popup-image');
+const popupImage = document.querySelector('.popup_type_image');
 const popups = document.querySelectorAll('.popup');
 const popupsClose = document.querySelectorAll('.popup__close-botton');
 const profileName = document.querySelector('.profile__name');
@@ -13,29 +13,37 @@ const mestoInput = document.querySelector('.popup__input_value_mesto');
 const imgInput = document.querySelector('.popup__input_value_img-link');
 const cards = document.querySelector('.elements');
 const template = document.querySelector('#cards-template');
-const container = popupImage.querySelector('.popup-image__container');
-const popupImagePicture = container.querySelector('.popup-image__picture');
-const popupImageTitle = container.querySelector('.popup-image__title');
+const container = popupImage.querySelector('.popup__box');
+const popupImagePicture = container.querySelector('.popup__picture');
+const popupImageTitle = container.querySelector('.popup__sign');
 
 const createCard = (initialCard) => {
     const newCard = template.content.querySelector('.element').cloneNode(true);
-    newCard.querySelector('.element__mask').setAttribute('src', initialCard.link);
+    const mask = newCard.querySelector('.element__mask');
+    mask.setAttribute('src', initialCard.link);
+    mask.setAttribute('alt', initialCard.name);
+
     newCard.querySelector('.element__title').textContent = initialCard.name; 
-    cards.prepend(newCard);
     
     newCard.querySelector('.element__delete-button').addEventListener('click', handleDeleteCard);
-    newCard.querySelector('.element__mask').addEventListener('click', handleShowImage);
+    mask.addEventListener('click', handleShowImage);
     newCard.querySelector('.element__like-botton').addEventListener('click', handleLikeCard);
+
+    return newCard;
+}
+
+function renderCard(initialCard) {
+    cards.prepend(createCard(initialCard));
 }
 
 initialCards.forEach((initialCard) => {
-    createCard(initialCard);
+    renderCard(initialCard);
 })
 
 function openProfilePopup () {
-    openPopup(popupProfile);
     jobInput.value = job.textContent;
     nameInput.value = profileName.textContent;
+    openPopup(popupProfile);
 }
 
 function openCardPopup () {
@@ -63,7 +71,7 @@ function handleSubmitProfile (evt) {
 
 function handleSubmitCards (evt) {
     evt.preventDefault();
-    createCard({ name: mestoInput.value, link: imgInput.value });
+    renderCard({ name: mestoInput.value, link: imgInput.value });
     closePopup(mestoInput.closest('div.popup'));
     mestoInput.value = null;
     imgInput.value = null;
