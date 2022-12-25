@@ -125,11 +125,11 @@ popups.forEach(function(item) {
     })
 });
 
-    document.addEventListener('keydown', function (event) {
-          if (event.key === "Escape") {
-            document.querySelector('.popup_opened').classList.remove('popup_opened');
-          }
-      })
+document.addEventListener('keydown', function (event) {
+        if (event.key === "Escape") {
+        document.querySelector('.popup_opened').classList.remove('popup_opened');
+        }
+})
 
 popupCards.addEventListener('submit', handleSubmitCards);
 
