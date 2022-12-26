@@ -41,8 +41,8 @@ const createCard = (initialCard) => {
     return newCard;
 }
 
-function renderCard(initialCard) {
-    cards.prepend(createCard(initialCard));
+function renderCard(Card) {
+    cards.prepend(createCard(Card));
 }
 
 initialCards.forEach((initialCard) => {
@@ -67,33 +67,41 @@ function openPopup(domElement) {
     if (inputs.length > 0) {
         toggleButtonState(inputs, button, validationConfig);
     }
+    
+    document.addEventListener('keydown', closeByEsc);
 }
 
 function handleClosePopup(evt) {
     closePopup(evt.target.closest('div.popup'));
 }
 
+function closeByEsc(event) {
+    if (event.key === "Escape") {
+        closePopup(document.querySelector('.popup_opened'));
+    }
+}
+
 function closePopup(item) {
     item.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeByEsc);
 }
 
 function handleSubmitProfile (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     job.textContent = jobInput.value;
-    closePopup(nameInput.closest('div.popup'));
+    closePopup(popupProfile);
 }
 
 function handleSubmitCards (evt) {
     evt.preventDefault();
     renderCard({ name: mestoInput.value, link: imgInput.value });
-    closePopup(mestoInput.closest('div.popup'));
+    closePopup(popupCards);
     mestoInput.value = null;
     imgInput.value = null;
 }
 
 function handleLikeCard (evt) {
-    evt.preventDefault();
     evt.target.classList.toggle('element__like-botton_active');
 }
 
@@ -120,16 +128,10 @@ popupsClose.forEach(function(item) {
 popups.forEach(function(item) {
     item.addEventListener('click', function(event) {
         if(event.target === event.currentTarget) {
-            handleClosePopup(event);
+            closePopup(event.currentTarget);
         }
     })
 });
-
-document.addEventListener('keydown', function (event) {
-        if (event.key === "Escape") {
-        document.querySelector('.popup_opened').classList.remove('popup_opened');
-        }
-})
 
 popupCards.addEventListener('submit', handleSubmitCards);
 

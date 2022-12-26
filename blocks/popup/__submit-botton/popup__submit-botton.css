@@ -14,7 +14,7 @@
     line-height: 1.222;
     align-items: center;
     justify-content: center;
-    margin: 25px 36px 36px 36px;
+    margin: 18px 36px 36px 36px;
     text-decoration: none;
 }
 
@@ -30,6 +30,6 @@
         line-height: 1.214;
         min-height: 46px;
         min-width: 238px;
-        margin: 22px 22px 25px 22px;
+        margin: 20px 22px 25px 22px;
     }
 }

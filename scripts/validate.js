@@ -23,22 +23,25 @@ function checkInputValidity(formElement, inputElement, config) {
 }
 
 function hasInvalidInput(inputList) {
-    let result = false;
-    inputList.forEach(function (inputElement) {
-        if (!inputElement.validity.valid) {
-            result = true;
-        }
-    });
-    return result;
+    const arr = Array.from(inputList);
+    return arr.some((inputElement) => !inputElement.validity.valid);
+  }
+
+function disableButton (buttonElement, config) {
+        buttonElement.classList.add(config.inactiveButtonClass);
+        buttonElement.disabled = true;
+}
+
+function enableButton (buttonElement, config) {
+    buttonElement.classList.remove(config.inactiveButtonClass);
+    buttonElement.disabled = false;
 }
 
 function toggleButtonState(inputList, buttonElement, config) {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(config.inactiveButtonClass);
-        buttonElement.disabled = true;
+        disableButton(buttonElement, config);
     } else {
-        buttonElement.classList.remove(config.inactiveButtonClass);
-        buttonElement.disabled = false;
+        enableButton(buttonElement, config);
     }
 }
 
